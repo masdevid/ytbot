@@ -1,4 +1,4 @@
-import os
+import os, sys
 import random
 import string
 import threading
@@ -33,9 +33,17 @@ iPhone_UA = ("Mozilla/5.0 (iPhone; CPU iPhone OS 12_2 like Mac OS X) AppleWebKit
     "Mozilla/5.0 (iPhone; CPU iPhone OS 13_5_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.1.1 Mobile/15E148 Safari/604.1",
     "Mozilla/5.0 (iPhone; CPU iPhone OS 12_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/12.0 Mobile/15E148 Safari/604.1")
 
-proxy_loading = input("[1] Load Proxys from APIs\n[2] Load Proxys from proxys.txt\n")
+print('Argument List:', str(sys.argv))
+if sys.argv[1]:
+    proxy_loading = int(sys.argv[1])
+else:
+    proxy_loading = input("[1] Load Proxys from APIs\n[2] Load Proxys from proxys.txt\n")
 
-token = input("ID?\n")
+if sys.argv[2]:
+    token = str(sys.argv[2])
+else:
+    token = input("ID?\n")
+
 class main(object):
     def __init__(self):
         self.combolist = Queue()
@@ -113,8 +121,10 @@ def bot():
             pass
 
 
-
-maxthreads = int(input("How many Threads? Recommended: 500 - 1000\n"))
+if sys.argv[3]:
+    maxthreads = int(sys.argv[3])
+else:
+    maxthreads = int(input("How many Threads? Recommended: 500 - 1000\n"))
 
 threading.Thread(target=a.printservice).start()
 num = 0
