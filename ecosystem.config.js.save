@@ -3,11 +3,12 @@ module.exports = {
       {
         name: "ytlivebot",
         script: "./bot.py",
+        // cmd: "bot.py",
         watch: true,
         instances: 1,
         exec_mode: "fork",
-        args: "1 QyTReKWfNsM 500",
-        max_memory_restart: "800M",
+        args: "1  200",
+        max_memory_restart: "500M",
         interpreter: 'python3',
         autorestart: false,
 	error_file: "./logs"
@@ -15,3 +16,4 @@ module.exports = {
   ]
 }
 
+QyTReKWfNsM
