@@ -7,7 +7,9 @@ from queue import Queue
 import platform
 import requests
 from colorama import Fore, init
-
+from random import choice
+time_list = [600, 700, 800, 900, 1000]
+init_time_list = [1,2,3]
 intro = """
 F Society
 """
@@ -43,7 +45,6 @@ if sys.argv[2]:
     token = str(sys.argv[2])
 else:
     token = input("ID?\n")
-
 class main(object):
     def __init__(self):
         self.combolist = Queue()
@@ -55,13 +56,14 @@ class main(object):
     def printservice(self): #print screen
         while True:
             if True:
-                os.system(clear)
+                # os.system(clear)
                 print(Fore.LIGHTCYAN_EX + intro + Fore.LIGHTMAGENTA_EX)
                 print(
                     Fore.LIGHTCYAN_EX + f"Botted:{self.botted}\n")
                 for i in range(len(self.printing) - 10, len(self.printing)):
                     try:
                         print(self.printing[i])
+                        print(t)
                     except (ValueError, Exception):
                         pass
                 time.sleep(0.5)
@@ -98,7 +100,7 @@ class proxy():
     def __init__(self):
         self.splited = []
         threading.Thread(target=self.update).start()
-        time.sleep(3)
+        time.sleep(1)
 
 proxy1 = proxy()
 def bot():
