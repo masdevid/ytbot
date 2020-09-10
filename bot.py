@@ -7,9 +7,6 @@ from queue import Queue
 import platform
 import requests
 from colorama import Fore, init
-from random import choice
-time_list = [600, 700, 800, 900, 1000]
-init_time_list = [1,2,3]
 intro = """
 F Society
 """
